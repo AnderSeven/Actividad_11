@@ -1,6 +1,19 @@
 #es lo mismo que el otro solo que con el carnet o codigo y usando diccionarios
+def quick_sort(lista):
+    if len(lista) <= 1:
+        return lista
+
+    pivote = lista[0]
+    menores = [x for x in lista[1:] if x < pivote]
+    iguales = [x for x in lista if x == pivote]
+    mayores = [x for x in lista[1:] if x > pivote]
+
+    return quick_sort(menores) + iguales + quick_sort(mayores)
+
 a = False
 opciones = 0
+estudiantes = {}
+
 while a == False:
     print("---Menu---")
     print("1. Registro de estudiantes")
@@ -9,6 +22,10 @@ while a == False:
     opciones = int(input("Elija una opcion: "))
     match opciones:
         case 1:
+
         case 2:
         case 3:
+            print("Gracias por usar el sistema")
+            a = True
         case _:
+            print("Opcion invalida")
