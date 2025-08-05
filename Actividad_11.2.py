@@ -22,7 +22,17 @@ while a == False:
     opciones = int(input("Elija una opcion: "))
     match opciones:
         case 1:
-
+            cantidad = int(input("Cuantos nombres quiere ingresar: "))
+            for i in range(cantidad):
+                s = False
+                while s == False:
+                    codigo = int(input("Ingrese un ID: "))
+                    if codigo in estudiantes:
+                        print("El Id ya existe, ingrese otro")
+                    else:
+                        s = True
+                nombre = input("Ingrese el nombre: ")
+                estudiantes[codigo] = nombre
         case 2:
         case 3:
             print("Gracias por usar el sistema")
