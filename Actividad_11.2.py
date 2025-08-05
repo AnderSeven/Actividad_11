@@ -34,6 +34,13 @@ while a == False:
                 nombre = input("Ingrese el nombre: ")
                 estudiantes[codigo] = nombre
         case 2:
+            if len(estudiantes) > 0:
+                ids_ordenados = quick_sort(list(estudiantes.keys()))
+                print("Lista ordenada por ID: ")
+                for codigo in ids_ordenados:
+                    print(f"Codigo: {codigo}, Nombre: {estudiantes[codigo]}")
+            else:
+                print("No hay ningun estudiante registrado")
         case 3:
             print("Gracias por usar el sistema")
             a = True
